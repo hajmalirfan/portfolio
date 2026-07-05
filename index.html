@@ -1,256 +1,801 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>M. Hajmal Irfan | Cybersecurity Engineer</title>
+  <!-- Primary SEO -->
+  <title>M. Hajmal Irfan | Cybersecurity Analyst &amp; Frontend Developer | Portfolio</title>
+  <meta name="description" content="M. Hajmal Irfan – Cybersecurity Analyst &amp; Frontend Developer. Expert in penetration testing, vulnerability assessment, OWASP security, React &amp; Node.js development. View projects, certifications, and resume." />
+  <meta name="keywords" content="Cybersecurity, Frontend Developer, UI/UX Designer, OWASP, Penetration Testing, React, Node.js, Portfolio" />
+  <meta name="author" content="M. Hajmal Irfan" />
 
-  <!-- SEO + Social Preview -->
-  <meta name="description" content="M. Hajmal Irfan – Cybersecurity Analyst, Frontend Developer & UI/UX Designer. Secure, scalable, recruiter-ready portfolio." />
-  <meta property="og:title" content="M. Hajmal Irfan | Cybersecurity Engineer" />
-  <meta property="og:description" content="Cybersecurity, Web Security, Frontend & UI/UX Projects. View portfolio and resume." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="M. Hajmal Irfan | Cybersecurity Analyst &amp; Frontend Developer | Portfolio" />
+  <meta property="og:description" content="M. Hajmal Irfan – Cybersecurity Analyst &amp; Frontend Developer. Expert in penetration testing, vulnerability assessment, OWASP security, React &amp; Node.js development. View projects, certifications, and resume." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="profile.png" />
 
-  <style>
-    :root {
-      --bg:#0b0f14;
-      --card:#121826;
-      --text:#e6e6e6;
-      --muted:#9aa4b2;
-      --accent:#4f8cff;
-    }
-    [data-theme="light"] {
-      --bg:#f5f7fb;
-      --card:#ffffff;
-      --text:#0b0f14;
-      --muted:#555;
-      --accent:#2563eb;
-    }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-    * { margin:0; padding:0; box-sizing:border-box; font-family:Inter,system-ui,sans-serif }
-    body { background:var(--bg); color:var(--text); line-height:1.6; transition:.3s }
-    a { color:inherit; text-decoration:none }
-    section { padding:90px 8% }
-    h1,h2,h3 { font-weight:600 }
-    h2 { font-size:32px; margin-bottom:32px }
-
-    /* Navbar */
-    nav {
-      position:fixed;
-      top:0; width:100%;
-      background:var(--bg);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:18px 8%;
-      z-index:100;
-      box-shadow:0 2px 10px #00000020;
-    }
-    nav ul { list-style:none; display:flex; gap:24px }
-    nav a:hover { color:var(--accent) }
-    .toggle {
-      border:1px solid var(--accent);
-      padding:6px 12px;
-      border-radius:6px;
-      cursor:pointer;
-      font-size:14px;
-    }
-
-    /* Hero */
-    .hero {
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-    }
-    .hero h1 { font-size:52px }
-    .hero p { color:var(--muted); margin:16px 0 30px; max-width:650px }
-    .btns { display:flex; gap:16px; flex-wrap:wrap }
-    .btn {
-      padding:12px 22px;
-      border-radius:8px;
-      font-weight:500;
-      cursor:pointer;
-    }
-    .primary { background:var(--accent); color:#fff }
-    .secondary { border:1px solid var(--accent) }
-
-    /* Layout */
-    .grid { display:grid; gap:24px }
-    .skills { grid-template-columns:repeat(auto-fit,minmax(220px,1fr)) }
-    .projects { grid-template-columns:repeat(auto-fit,minmax(280px,1fr)) }
-    .card {
-      background:var(--card);
-      padding:24px;
-      border-radius:16px;
-      transition:.3s;
-      cursor:pointer;
-    }
-    .card:hover { transform:translateY(-6px) }
-    .card p { color:var(--muted) }
-
-    /* Modal */
-    .modal {
-      position:fixed;
-      inset:0;
-      background:#000000aa;
-      display:none;
-      align-items:center;
-      justify-content:center;
-      z-index:200;
-    }
-    .modal-content {
-      background:var(--card);
-      padding:30px;
-      border-radius:16px;
-      max-width:560px;
-      width:92%;
-    }
-    .close { float:right; cursor:pointer; color:var(--accent) }
-
-    /* Animations */
-    .fade { opacity:0; transform:translateY(20px); transition:.6s }
-    .fade.show { opacity:1; transform:none }
-
-    footer {
-      text-align:center;
-      padding:30px;
-      color:var(--muted);
-    }
-
-    @media(max-width:600px){
-      .hero h1 { font-size:38px }
-    }
-  </style>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 </head>
+<body data-theme="dark">
 
-<body>
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar" role="navigation" aria-label="Primary navigation">
+    <a href="#hero" class="nav-logo" aria-label="MHI – Home">
+      <span class="logo-text">MHI</span>
+      <span class="logo-dot" aria-hidden="true"></span>
+    </a>
 
-<nav>
-  <strong>MHI</strong>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#security">Security</a></li>
-    <li><a href="resume.pdf" download>Resume</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div class="toggle" id="themeToggle">Dark / Light</div>
-</nav>
+    <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#certifications" class="nav-link">Certifications</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#hackathons" class="nav-link">Hackathons</a></li>
+      <li><a href="#security" class="nav-link">Security</a></li>
+      <li><a href="#achievements" class="nav-link">Achievements</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
 
-<section class="hero fade">
-  <h1>M. Hajmal Irfan</h1>
-  <h3>Cybersecurity Analyst · Frontend Developer · UI/UX Designer</h3>
-  <p>Securing systems. Designing experiences. Building future-ready software.</p>
-
-  <div class="btns">
-    <a href="#projects" class="btn primary">View Projects</a>
-    <a href="resume.pdf" class="btn secondary" download>Download Resume</a>
-  </div>
-</section>
-
-<section id="about" class="fade">
-  <h2>About Me</h2>
-  <p>
-    Cybersecurity-focused Computer Science student with hands-on experience in OWASP-aligned web security,
-    frontend development, and UI/UX design. I build secure, scalable, real-world software.
-  </p>
-</section>
-
-<section id="skills" class="fade">
-  <h2>Skills</h2>
-  <div class="grid skills">
-    <div class="card"><h3>Cybersecurity</h3><p>OWASP · Network Security · Vulnerability Assessment</p></div>
-    <div class="card"><h3>Security Tools</h3><p>Wireshark · Nmap · Burp Suite</p></div>
-    <div class="card"><h3>Development</h3><p>HTML · CSS · JavaScript · Python · Git</p></div>
-    <div class="card"><h3>UI/UX</h3><p>Figma · Photoshop · Accessibility · Design Systems</p></div>
-  </div>
-</section>
-
-<section id="projects" class="fade">
-  <h2>Projects</h2>
-  <div class="grid projects">
-    <div class="card" onclick="openModal('Blood Donation App','Secure donor matching with authentication, geolocation APIs and responsive UI.')">
-      <h3>Blood Donation App</h3>
-      <p>Emergency donor platform</p>
+    <div class="nav-controls">
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">
+        <span class="icon-sun" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+        <span class="icon-moon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+      </button>
+      <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-resume" aria-label="View Resume PDF">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Resume
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNavOverlay">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="card" onclick="openModal('Blue Carbon Blockchain','Blockchain POC securing environmental datasets with immutable ledgers.')">
-      <h3>Blue Carbon System</h3>
-      <p>Blockchain proof-of-concept</p>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true" role="dialog" aria-label="Mobile navigation">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close navigation menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <ul role="list">
+      <li><a href="#about" class="mobile-nav-link">About</a></li>
+      <li><a href="#certifications" class="mobile-nav-link">Certifications</a></li>
+      <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+      <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+      <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+      <li><a href="#hackathons" class="mobile-nav-link">Hackathons</a></li>
+      <li><a href="#security" class="mobile-nav-link">Security</a></li>
+      <li><a href="#achievements" class="mobile-nav-link">Achievements</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      <li><a href="resume.pdf" target="_blank" class="mobile-nav-link mobile-nav-resume">Resume ↗</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+    <!-- ========== HERO ========== -->
+    <section id="hero" class="hero-section" aria-label="Hero – Introduction">
+      <div class="hero-orb orb-cyan" aria-hidden="true"></div>
+      <div class="hero-orb orb-violet" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <div class="hero-content reveal">
+          <div class="status-pill" role="status" aria-label="Available for opportunities">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Available for opportunities
+          </div>
+
+          <div class="hero-photo-wrap">
+            <img src="profile.png" alt="M. Hajmal Irfan – Cybersecurity Analyst and Frontend Developer" class="hero-photo" width="120" height="120" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="hero-photo-fallback" aria-hidden="true">MHI</div>
+          </div>
+
+          <h1 class="hero-name">M. Hajmal Irfan</h1>
+
+          <p class="hero-role" aria-label="Cybersecurity Analyst, Frontend Developer, and UI/UX Designer">
+            <span id="typewriter"></span><span class="cursor" aria-hidden="true">|</span>
+          </p>
+
+          <p class="hero-bio">
+            Highly driven cybersecurity enthusiast with practical knowledge in network security, vulnerability assessment, and modern web application security aligned with OWASP principles. Experienced in frontend development and UI/UX design.
+          </p>
+
+          <div class="hero-contacts" aria-label="Contact information">
+            <span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Thiruvarur, Tamil Nadu
+            </span>
+            <a href="mailto:kinghajmalirfan@gmail.com" aria-label="Send email to M. Hajmal Irfan">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              kinghajmalirfan@gmail.com
+            </a>
+            <a href="tel:+917598557161" aria-label="Call M. Hajmal Irfan">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.27 6.27l.97-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +91 7598557161
+            </a>
+          </div>
+
+          <div class="hero-btns">
+            <a href="#projects" class="btn btn-primary" aria-label="View my projects">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              View Projects
+            </a>
+            <a href="#contact" class="btn btn-outline" aria-label="Get in touch with me">Get In Touch</a>
+            <a href="resume.pdf" download class="btn btn-ghost" aria-label="Download Resume PDF">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Resume
+            </a>
+          </div>
+        </div>
+
+        <!-- Terminal Card -->
+        <div class="terminal-card glass-panel reveal reveal-right" aria-label="Security terminal simulation" role="img">
+          <div class="terminal-header" aria-hidden="true">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="terminal-title">security-scan.sh</span>
+          </div>
+          <div class="terminal-body" id="terminalBody" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section id="about" class="section" aria-label="About Me">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <span class="section-label">WHO I AM</span>
+          <h2 class="section-title">Professional Summary</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-bio reveal">
+            <p>Highly driven cybersecurity enthusiast with practical knowledge in network security, vulnerability assessment, and modern web application security aligned with OWASP principles. Experienced in frontend development and UI/UX design, with a proven ability to build secure, innovative software solutions including Web applications.</p>
+            <p style="margin-top: 1rem;">Known for strong analytical thinking, rapid learning, and a future-focused mindset aimed at solving real-world security and software challenges.</p>
+
+            <div class="glass-panel edu-card reveal">
+              <div class="edu-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <div class="edu-content">
+                <h3>B.E. Computer Science &amp; Engineering (Cyber Security)</h3>
+                <p class="edu-institute">J.J. College of Engineering and Technology, Tiruchirappalli</p>
+                <p class="edu-sub">Affiliated to Anna University, Chennai</p>
+                <div class="edu-meta">
+                  <span class="badge badge-success">CGPA: 8.03</span>
+                  <span class="badge badge-amber">Expected 2028</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-stats">
+            <div class="stat-card glass-panel reveal">
+              <span class="stat-number" data-target="4" data-suffix="+">0+</span>
+              <span class="stat-label">Certifications</span>
+            </div>
+            <div class="stat-card glass-panel reveal">
+              <span class="stat-number" data-target="4" data-suffix="+">0+</span>
+              <span class="stat-label">Academic Projects</span>
+            </div>
+            <div class="stat-card glass-panel reveal">
+              <span class="stat-number" data-target="3" data-suffix="+">0+</span>
+              <span class="stat-label">Hackathons</span>
+            </div>
+            <div class="stat-card glass-panel reveal">
+              <span class="stat-number" data-target="8.03" data-decimals="2">0</span>
+              <span class="stat-label">CGPA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CERTIFICATIONS ========== -->
+    <section id="certifications" class="section section-alt" aria-label="Certifications and Training">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <span class="section-label">CREDENTIALS</span>
+          <h2 class="section-title">Certifications &amp; Training</h2>
+        </div>
+
+        <div class="cert-grid">
+          <article class="cert-card glass-panel reveal" tabindex="0" aria-label="Social Engineering and Ethical Hacking 101 certification">
+            <div class="cert-badge cert-badge-cyan" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="cert-content">
+              <h3 class="cert-title">Social Engineering &amp; Ethical Hacking 101</h3>
+              <p class="cert-issuer">CappricioSec University</p>
+              <p class="cert-desc">Built strong fundamentals in social engineering, phishing vectors, human-layer security, and prevention strategies. Performed hands-on SET simulations and real-world attack-defense scenarios.</p>
+              <span class="badge badge-success cert-status">&#10003; Certified</span>
+            </div>
+          </article>
+
+          <article class="cert-card glass-panel reveal" tabindex="0" aria-label="Linux and Web Bug Bounty Bootcamp certification">
+            <div class="cert-badge cert-badge-violet" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="cert-content">
+              <h3 class="cert-title">Linux &amp; Web Bug Bounty Bootcamp</h3>
+              <p class="cert-issuer">CappricioSec University</p>
+              <p class="cert-desc">Trained in Linux command-line operations, automation, and security-driven workflows. Practiced BurpSuite, web reconnaissance, vulnerability identification, and structured bug-bounty methodologies.</p>
+              <span class="badge badge-success cert-status">&#10003; Certified</span>
+            </div>
+          </article>
+
+          <article class="cert-card glass-panel reveal" tabindex="0" aria-label="Google Cloud Digital Leader certification">
+            <div class="cert-badge cert-badge-blue" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+            </div>
+            <div class="cert-content">
+              <h3 class="cert-title">Google Cloud Digital Leader</h3>
+              <p class="cert-issuer">Google Cloud Professional Learning Program · 2026</p>
+              <p class="cert-desc">Core concepts of cloud computing, data, AI, and digital transformation. Data analytics, ML fundamentals, and data governance. Google Cloud services (BigQuery, AI tools), responsible AI, and business use cases of ML.</p>
+              <span class="badge badge-success cert-status">&#10003; Certified</span>
+            </div>
+          </article>
+
+          <article class="cert-card glass-panel reveal" tabindex="0" aria-label="Cyber Security Bootcamp at RedTeam Hacker Academy">
+            <div class="cert-badge cert-badge-red" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div class="cert-content">
+              <h3 class="cert-title">Cyber Security Bootcamp</h3>
+              <p class="cert-issuer">RedTeam Hacker Academy, Chennai · 31 Jan – 1 Feb 2026 (2 Days)</p>
+              <p class="cert-desc">Intensive bootcamp on ethical hacking and penetration testing methodologies. Reconnaissance to Reporting workflow and OWASP Top Web Vulnerabilities. Wireless Security, Network Hacking, and real-world attack/defense scenarios.</p>
+              <span class="badge badge-success cert-status">&#10003; Certified</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EXPERIENCE ========== -->
+    <section id="experience" class="section" aria-label="Work Experience">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <span class="section-label">CAREER</span>
+          <h2 class="section-title">Experience</h2>
+        </div>
+
+        <div class="timeline" role="list">
+          <div class="timeline-item reveal" role="listitem">
+            <div class="timeline-marker" aria-hidden="true">
+              <span class="timeline-dot"></span>
+              <span class="timeline-line"></span>
+            </div>
+            <article class="timeline-card glass-panel">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Frontend Developer &amp; UI/UX Intern</h3>
+                  <p class="timeline-company">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    Securix Service (Startup)
+                  </p>
+                </div>
+                <span class="badge badge-amber">2025 – Present</span>
+              </div>
+              <ul class="timeline-duties" aria-label="Responsibilities">
+                <li>Contributed to the front-end development and UI/UX design cycles for live startup projects</li>
+                <li>Designed UI wireframes and mockups using Figma, translating prototypes into functional, responsive web pages (HTML/CSS/JS)</li>
+                <li>Enhanced user journeys, navigation, and accessibility, supporting continuous product improvements</li>
+                <li>Gained experience collaborating in a fast-paced development environment and optimizing interface performance</li>
+              </ul>
+              <div class="skill-tags" aria-label="Technologies used">
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">HTML/CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">UI/UX Design</span>
+                <span class="skill-tag">Accessibility</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+    <section id="skills" class="section section-alt" aria-label="Technical Skills">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <span class="section-label">EXPERTISE</span>
+          <h2 class="section-title">Core Technical Competencies</h2>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card glass-panel reveal" tabindex="0" aria-label="Cybersecurity and Networking skills">
+            <div class="skill-card-header">
+              <div class="skill-icon skill-icon-cyan" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3>Cybersecurity &amp; Networking</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Network Security</span>
+              <span class="skill-tag">Web App Security</span>
+              <span class="skill-tag">OWASP Top 10</span>
+              <span class="skill-tag">Vulnerability Assessment</span>
+              <span class="skill-tag">Ethical Hacking</span>
+              <span class="skill-tag">Wireshark</span>
+              <span class="skill-tag">Nmap</span>
+              <span class="skill-tag">Burp Suite</span>
+            </div>
+          </article>
+
+          <article class="skill-card glass-panel reveal" tabindex="0" aria-label="Development and Tools skills">
+            <div class="skill-card-header">
+              <div class="skill-icon skill-icon-violet" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <h3>Development &amp; Tools</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">React.js</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">Software Design</span>
+            </div>
+          </article>
+
+          <article class="skill-card glass-panel reveal" tabindex="0" aria-label="UI/UX and Design skills">
+            <div class="skill-card-header">
+              <div class="skill-icon skill-icon-pink" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"/><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"/></svg>
+              </div>
+              <h3>UI/UX &amp; Design</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">Wireframing</span>
+              <span class="skill-tag">Adobe Photoshop</span>
+              <span class="skill-tag">User Flow Design</span>
+              <span class="skill-tag">Accessibility</span>
+              <span class="skill-tag">Design Systems</span>
+              <span class="skill-tag">Interaction Design</span>
+            </div>
+          </article>
+
+          <article class="skill-card glass-panel reveal" tabindex="0" aria-label="Soft skills">
+            <div class="skill-card-header">
+              <div class="skill-icon skill-icon-green" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3>Soft Skills</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Team Leadership</span>
+              <span class="skill-tag">Quick Learning</span>
+              <span class="skill-tag">Problem Solving</span>
+              <span class="skill-tag">Adaptability</span>
+              <span class="skill-tag">Forward-Thinking</span>
+              <span class="skill-tag">Communication</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section id="projects" class="section" aria-label="Academic Projects">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <span class="section-label">PORTFOLIO</span>
+          <h2 class="section-title">Academic Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card glass-panel reveal" tabindex="0" aria-label="Logyzer project">
+            <div class="project-accent-line" style="background: linear-gradient(90deg, var(--violet), transparent);" aria-hidden="true"></div>
+            <div class="project-icon project-icon-blue" aria-hidden="true" style="color: var(--violet); background: var(--violet-glow); border: 1px solid rgba(129, 140, 248, 0.2);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <h3 class="project-title">Logyzer</h3>
+            <p class="project-desc">Python-based security log analysis tool that automates the detection of failed login attempts and suspicious activities, generating security reports with an intuitive Streamlit interface.</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Log Analysis</span>
+              <span class="skill-tag">Security Automation</span>
+              <span class="skill-tag">Streamlit</span>
+              <span class="skill-tag">Incident Investigation</span>
+            </div>
+          </article>
+
+          <article class="project-card glass-panel reveal" tabindex="0" aria-label="Medi AI project">
+            <div class="project-accent-line" style="background: linear-gradient(90deg, var(--cyan), transparent);" aria-hidden="true"></div>
+            <div class="project-icon project-icon-cyan" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3 class="project-title">Medi AI</h3>
+            <p class="project-desc">AI-powered medical document assistant with NLP. Enables intelligent document analysis and query responses for healthcare professionals.</p>
+            <div class="skill-tags">
+              <span class="skill-tag">React.js</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">AI/ML APIs</span>
+              <span class="skill-tag">NLP</span>
+            </div>
+          </article>
+
+          <article class="project-card glass-panel reveal" tabindex="0" aria-label="Blood Donation App project">
+            <div class="project-accent-line" style="background: linear-gradient(90deg, #f43f5e, transparent);" aria-hidden="true"></div>
+            <div class="project-icon project-icon-red" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3 class="project-title">Blood Donation App</h3>
+            <p class="project-desc">Full-stack platform with secure login and real-time donor matching. Connects donors and recipients via geolocation and emergency matching algorithms.</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Login/Auth</span>
+              <span class="skill-tag">Geo-location APIs</span>
+              <span class="skill-tag">Emergency Matching</span>
+              <span class="skill-tag">Full Stack</span>
+            </div>
+          </article>
+
+          <article class="project-card glass-panel reveal" tabindex="0" aria-label="Blue Carbon System project">
+            <div class="project-accent-line" style="background: linear-gradient(90deg, #3b82f6, transparent);" aria-hidden="true"></div>
+            <div class="project-icon project-icon-blue" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V10l8-8 8 8v10M9 20v-6h6v6"/></svg>
+            </div>
+            <h3 class="project-title">Blue Carbon System</h3>
+            <p class="project-desc">Blockchain proof-of-concept for environmental data security. Uses immutable ledger technology to ensure tamper-proof tracking of carbon data.</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Blockchain</span>
+              <span class="skill-tag">Immutable Ledger</span>
+              <span class="skill-tag">Smart Contracts</span>
+              <span class="skill-tag">Dashboard</span>
+            </div>
+          </article>
+
+          <article class="project-card glass-panel reveal" tabindex="0" aria-label="Next-Farming Agent project">
+            <div class="project-accent-line" style="background: linear-gradient(90deg, #22c55e, transparent);" aria-hidden="true"></div>
+            <div class="project-icon project-icon-green" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10c0 5-4 9-9 10C8 21 4 17 4 12a10 10 0 0 1 8-10z"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <h3 class="project-title">Next-Farming Agent</h3>
+            <p class="project-desc">AI-based agricultural intelligence system with Weather API integration, chatbot assistant, and ML-driven crop recommendations for farmers.</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Weather API</span>
+              <span class="skill-tag">Chatbot</span>
+              <span class="skill-tag">ML</span>
+              <span class="skill-tag">Crop Recommendations</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== HACKATHONS ========== -->
+    <section id="hackathons" class="section section-alt" aria-label="Hackathon Experience">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <span class="section-label">COMPETITIONS</span>
+          <h2 class="section-title">Hackathon Experience</h2>
+        </div>
+
+        <div class="hackathon-grid">
+          <article class="hackathon-card glass-panel reveal" tabindex="0" aria-label="Bharatiya Antariksh Hackathon 2025">
+            <div class="hackathon-number" aria-hidden="true">01</div>
+            <div class="hackathon-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3 class="hackathon-title">Bharatiya Antariksh Hackathon 2025</h3>
+            <p class="hackathon-level">National Level &middot; Space &amp; Technology Innovation</p>
+            <p class="hackathon-desc">Submitted an innovative solution for India's space and technology innovation journey. Demonstrated creativity, curiosity, and strong problem-solving mindset toward real-world space challenges.</p>
+          </article>
+
+          <article class="hackathon-card glass-panel reveal" tabindex="0" aria-label="SRM TRP Engineering College Hackathon">
+            <div class="hackathon-number" aria-hidden="true">02</div>
+            <div class="hackathon-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3 class="hackathon-title">SRM TRP Engineering College</h3>
+            <p class="hackathon-level">National Level &middot; 24-Hour Hackathon</p>
+            <p class="hackathon-desc">Participated in a 24-hour national hackathon focused on software and app development. Showcased practical skills, creativity, and commitment in addressing real-world technical problems.</p>
+          </article>
+
+          <article class="hackathon-card glass-panel reveal" tabindex="0" aria-label="Adobe India Hackathon 2025">
+            <div class="hackathon-number" aria-hidden="true">03</div>
+            <div class="hackathon-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+            </div>
+            <h3 class="hackathon-title">Adobe India Hackathon 2025</h3>
+            <p class="hackathon-level">Coding &amp; Logical Reasoning Competition</p>
+            <p class="hackathon-desc">Applied coding and logical reasoning to solve problem statements under evaluation conditions. Demonstrated strong aptitude in programming fundamentals and technical analysis.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECURITY ========== -->
+    <section id="security" class="section" aria-label="Security Showcase">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <span class="section-label">SECURITY LAB</span>
+          <h2 class="section-title">Security Showcase</h2>
+        </div>
+
+        <div class="security-grid">
+          <article class="security-card glass-panel reveal" tabindex="0" aria-label="PicoCTF competition experience">
+            <div class="security-header">
+              <div class="security-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+              </div>
+              <h3>PicoCTF Competition</h3>
+            </div>
+            <p class="security-desc">Completed challenges in web exploitation, cryptography, reverse engineering, forensics, and binary exploitation.</p>
+            <div class="security-tags">
+              <span class="security-tag">SQL Injection</span>
+              <span class="security-tag">XSS</span>
+              <span class="security-tag">Buffer Overflow</span>
+              <span class="security-tag">Cryptographic Attacks</span>
+              <span class="security-tag">Reverse Engineering</span>
+            </div>
+            <a href="https://play.picoctf.org/irfanz" target="_blank" rel="noopener" class="security-link" aria-label="View PicoCTF profile (opens in new tab)">View Profile &#8594;</a>
+          </article>
+
+          <article class="security-card glass-panel reveal" tabindex="0" aria-label="Bug Bounty and Security Labs experience">
+            <div class="security-header">
+              <div class="security-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <h3>Bug Bounty &amp; Security Labs</h3>
+            </div>
+            <p class="security-desc">OWASP Top 10 vulnerable lab environments and real-world bug hunting practice on leading platforms.</p>
+            <div class="security-tags">
+              <span class="security-tag">TryHackMe</span>
+              <span class="security-tag">PortSwigger Academy</span>
+              <span class="security-tag">OWASP Top 10</span>
+              <span class="security-tag">Web Exploitation</span>
+            </div>
+          </article>
+
+          <article class="security-card glass-panel reveal" tabindex="0" aria-label="Network Analysis experience">
+            <div class="security-header">
+              <div class="security-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="12" x2="2" y2="12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" y1="16" x2="6.01" y2="16"/><line x1="10" y1="16" x2="10.01" y2="16"/></svg>
+              </div>
+              <h3>Network Analysis</h3>
+            </div>
+            <p class="security-desc">Packet capture analysis, network traffic monitoring, and protocol analysis using industry-standard tools.</p>
+            <div class="security-tags">
+              <span class="security-tag">Wireshark</span>
+              <span class="security-tag">Nmap</span>
+              <span class="security-tag">Tcpdump</span>
+              <span class="security-tag">Packet Analysis</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ACHIEVEMENTS ========== -->
+    <section id="achievements" class="section section-alt" aria-label="Achievements and Awards">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <span class="section-label">RECOGNITION</span>
+          <h2 class="section-title">Achievements</h2>
+        </div>
+
+        <div class="achievements-grid">
+          <article class="achievement-card glass-panel reveal" tabindex="0" aria-label="ACM Student Member">
+            <div class="achievement-icon achievement-icon-blue" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            </div>
+            <div class="achievement-body">
+              <h3>ACM Student Member</h3>
+              <p class="achievement-org">J.J. College of Engineering &amp; Technology</p>
+              <p class="achievement-desc">Recognized as an active student member contributing to academic and technical community initiatives.</p>
+            </div>
+          </article>
+
+          <article class="achievement-card glass-panel reveal" tabindex="0" aria-label="Third Prize at Technothirst 2025">
+            <div class="achievement-icon achievement-icon-bronze" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+            </div>
+            <div class="achievement-body">
+              <h3>Third Prize – Technothirst'25</h3>
+              <p class="achievement-org">A.V.C. College of Engineering &middot; National Level</p>
+              <p class="achievement-desc">Secured Third Prize for presenting an innovative paper titled "Blood Donation App: An Innovation Solution to Address Blood Shortages."</p>
+            </div>
+          </article>
+
+          <article class="achievement-card glass-panel reveal" tabindex="0" aria-label="Runner-up at National Science Day 2025">
+            <div class="achievement-icon achievement-icon-silver" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div class="achievement-body">
+              <h3>Runner-Up – National Science Day 2025</h3>
+              <p class="achievement-org">J.J. College of Engineering &amp; Technology &middot; National Level</p>
+              <p class="achievement-desc">Recognized for successful completion and active participation in Technical Presentation.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== LANGUAGES ========== -->
+    <section id="languages" class="section" aria-label="Language Proficiency">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <span class="section-label">COMMUNICATION</span>
+          <h2 class="section-title">Languages</h2>
+        </div>
+
+        <div class="languages-grid reveal">
+          <div class="language-card glass-panel" tabindex="0" aria-label="Tamil – Native proficiency">
+            <div class="language-header">
+              <span class="language-flag" aria-hidden="true">&#127470;&#127475;</span>
+              <div>
+                <h3 class="language-name">Tamil</h3>
+                <span class="language-level">Native</span>
+              </div>
+            </div>
+            <div class="language-bar-wrap" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="Tamil proficiency 100%">
+              <div class="language-bar-fill language-bar-cyan" style="--w: 100%;"></div>
+            </div>
+          </div>
+
+          <div class="language-card glass-panel" tabindex="0" aria-label="English – Fluent proficiency">
+            <div class="language-header">
+              <span class="language-flag" aria-hidden="true">&#127468;&#127463;</span>
+              <div>
+                <h3 class="language-name">English</h3>
+                <span class="language-level">Fluent</span>
+              </div>
+            </div>
+            <div class="language-bar-wrap" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="English proficiency 90%">
+              <div class="language-bar-fill language-bar-violet" style="--w: 90%;"></div>
+            </div>
+          </div>
+
+          <div class="language-card glass-panel" tabindex="0" aria-label="Arabic – Basic proficiency">
+            <div class="language-header">
+              <span class="language-flag" aria-hidden="true">&#127462;&#127466;</span>
+              <div>
+                <h3 class="language-name">Arabic</h3>
+                <span class="language-level">Basic</span>
+              </div>
+            </div>
+            <div class="language-bar-wrap" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" aria-label="Arabic proficiency 25%">
+              <div class="language-bar-fill language-bar-amber" style="--w: 25%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section id="contact" class="section section-alt" aria-label="Contact Me">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <span class="section-label">GET IN TOUCH</span>
+          <h2 class="section-title">Contact</h2>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Info Card -->
+          <div class="contact-info glass-panel reveal" aria-label="Contact information">
+            <h3>Let's Connect</h3>
+            <p>Open to opportunities in cybersecurity, frontend development, and UI/UX design. Feel free to reach out!</p>
+
+            <div class="contact-items">
+              <a href="tel:+917598557161" class="contact-item" aria-label="Call +91 7598557161">
+                <span class="contact-item-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.27 6.27l.97-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </span>
+                <span>+91 7598557161</span>
+              </a>
+              <a href="mailto:kinghajmalirfan@gmail.com" class="contact-item" aria-label="Email kinghajmalirfan@gmail.com">
+                <span class="contact-item-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </span>
+                <span>kinghajmalirfan@gmail.com</span>
+              </a>
+              <div class="contact-item" aria-label="Location Thiruvarur Tamil Nadu India">
+                <span class="contact-item-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </span>
+                <span>Thiruvarur, Tamil Nadu, India</span>
+              </div>
+            </div>
+
+            <div class="contact-socials" aria-label="Social media links">
+              <a href="https://github.com/hajmalirfan" target="_blank" rel="noopener" class="social-link" aria-label="GitHub profile (opens in new tab)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/m-hajmal-irfan-14436b324/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn profile (opens in new tab)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="https://leetcode.com/u/hajmalirfan/" target="_blank" rel="noopener" class="social-link" aria-label="LeetCode profile (opens in new tab)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+              </a>
+              <a href="https://play.picoctf.org/irfanz" target="_blank" rel="noopener" class="social-link" aria-label="PicoCTF profile (opens in new tab)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </a>
+              <a href="https://www.skills.google/public_profiles/391f489e-4af4-4e82-8517-d02c81a60a3f" target="_blank" rel="noopener" class="social-link" aria-label="Google Skills Profile (opens in new tab)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 1.56-1.56 2.95-3.24 3.5v2.88h5.15c3.02-2.78 4.75-6.88 4.75-11.75 0-.7-.06-1.37-.18-2.02c-.06-.34-.1-.67-.18-1.02H21.35zM12.18 21c4.27 0 7.84-1.4 10.45-3.8l-5.15-2.88c-1.43.96-3.26 1.54-5.3 1.54c-4.08 0-7.53-2.73-8.77-6.42l-5.32 4.12C5.97 18.06 8.84 21 12.18 21zM3.41 9.44c-.33.97-.52 2.01-.52 3.09s.19 2.12.52 3.09l5.32-4.12c-.12-.34-.18-.7-.18-1.07c0-.37.06-.73.18-1.07L3.41 9.44zM12.18 6.15c2.3 0 4.38.79 6.01 2.35l4.51-4.51C19.98 1.55 16.42.5 12.18.5C8.84.5 5.97 3.44 3.41 7.94l5.32 4.12c1.24-3.69 4.69-6.42 8.77-6.42z"/></svg>
+              </a>
+              <a href="https://me.developers.google.com/u/116565545700007197522" target="_blank" rel="noopener" class="social-link" aria-label="Google Developers Profile (opens in new tab)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form class="contact-form glass-panel reveal" id="contactForm" novalidate aria-label="Contact form">
+            <div class="form-group">
+              <label for="contactName">Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="contactName" name="name" placeholder="Your full name" required autocomplete="name" aria-required="true" />
+              <span class="form-error" id="nameError" role="alert" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required autocomplete="email" aria-required="true" />
+              <span class="form-error" id="emailError" role="alert" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message <span aria-hidden="true">*</span></label>
+              <textarea id="contactMessage" name="message" placeholder="Tell me about your opportunity or project..." rows="5" required aria-required="true"></textarea>
+              <span class="form-error" id="messageError" role="alert" aria-live="polite"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn" aria-label="Send message">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo" aria-label="MHI">MHI</div>
+      <div class="footer-socials" aria-label="Social media links">
+        <a href="https://github.com/hajmalirfan" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/m-hajmal-irfan-14436b324/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://leetcode.com/u/hajmalirfan/" target="_blank" rel="noopener" class="social-link" aria-label="LeetCode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+        </a>
+        <a href="https://play.picoctf.org/irfanz" target="_blank" rel="noopener" class="social-link" aria-label="PicoCTF">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </a>
+        <a href="https://www.skills.google/public_profiles/391f489e-4af4-4e82-8517-d02c81a60a3f" target="_blank" rel="noopener" class="social-link" aria-label="Google Skills Profile">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 1.56-1.56 2.95-3.24 3.5v2.88h5.15c3.02-2.78 4.75-6.88 4.75-11.75 0-.7-.06-1.37-.18-2.02c-.06-.34-.1-.67-.18-1.02H21.35zM12.18 21c4.27 0 7.84-1.4 10.45-3.8l-5.15-2.88c-1.43.96-3.26 1.54-5.3 1.54c-4.08 0-7.53-2.73-8.77-6.42l-5.32 4.12C5.97 18.06 8.84 21 12.18 21zM3.41 9.44c-.33.97-.52 2.01-.52 3.09s.19 2.12.52 3.09l5.32-4.12c-.12-.34-.18-.7-.18-1.07c0-.37.06-.73.18-1.07L3.41 9.44zM12.18 6.15c2.3 0 4.38.79 6.01 2.35l4.51-4.51C19.98 1.55 16.42.5 12.18.5C8.84.5 5.97 3.44 3.41 7.94l5.32 4.12c1.24-3.69 4.69-6.42 8.77-6.42z"/></svg>
+        </a>
+        <a href="https://me.developers.google.com/u/116565545700007197522" target="_blank" rel="noopener" class="social-link" aria-label="Google Developers Profile">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        </a>
+      </div>
+      <p class="footer-copy">&copy; 2026 M. Hajmal Irfan &middot; Built for recruiters &amp; engineers</p>
     </div>
-    <div class="card" onclick="openModal('Next-Farming Agent','AI assistant integrating weather APIs and ML-based crop recommendations.')">
-      <h3>Next-Farming Agent</h3>
-      <p>AI-based system</p>
-    </div>
-  </div>
-</section>
+  </footer>
 
-<section id="security" class="fade">
-  <h2>Security Showcase</h2>
-  <div class="grid projects">
-    <div class="card"><h3>PicoCTF</h3><p>Web, crypto, reverse engineering challenges</p></div>
-    <div class="card"><h3>Bug Bounty Labs</h3><p>OWASP Top 10 aligned labs</p></div>
-    <div class="card"><h3>Network Analysis</h3><p>Packet inspection and traffic analysis</p></div>
-  </div>
-</section>
-
-<section id="contact" class="fade">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:kinghajmalirfan@gmail.com">kinghajmalirfan@gmail.com</a></p>
-  <p>Phone: <a href="tel:+917598557161">+91 7598557161</a></p>
-  <p>
-    <a href="https://github.com/hajmalirfan" target="_blank">GitHub</a> |
-    <a href="https://leetcode.com/u/hajmalirfan/" target="_blank">LeetCode</a> |
-    <a href="https://play.picoctf.org/irfanz" target="_blank">PicoCTF</a>
-  </p>
-</section>
-
-<footer>
-  © 2025 M. Hajmal Irfan · Built for recruiters & engineers
-</footer>
-
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">✕</span>
-    <h3 id="modalTitle"></h3>
-    <p id="modalText"></p>
-  </div>
-</div>
-
-<script>
-  // Smooth scroll
-  document.querySelectorAll('a[href^=\"#\"]').forEach(a=>{
-    a.onclick=e=>{
-      e.preventDefault();
-      document.querySelector(a.getAttribute('href'))
-        .scrollIntoView({behavior:'smooth'});
-    }
-  });
-
-  // Theme toggle
-  const toggle=document.getElementById('themeToggle');
-  let light=false;
-  toggle.onclick=()=>{
-    document.body.dataset.theme=light?'':'light';
-    light=!light;
-  };
-
-  // Modal
-  function openModal(title,text){
-    modal.style.display='flex';
-    modalTitle.innerText=title;
-    modalText.innerText=text;
-  }
-  function closeModal(){ modal.style.display='none'; }
-
-  // Scroll animations
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show') })
-  });
-  document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
