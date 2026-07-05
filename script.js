@@ -332,127 +332,32 @@ document.addEventListener('DOMContentLoaded', function () {
     langObserver.observe(bar);
   });
 
-  /* ════════════════════════════════════════════
-     11. CONTACT FORM (with client-side validation)
-         Stub: ready for EmailJS / backend integration
-     ════════════════════════════════════════════ */
+/* ════════════════════════════════════════════
+      11. CONTACT FORM (Formspree integration)
+      ════════════════════════════════════════════ */
   const contactForm = document.getElementById('contactForm');
-  const formStatus  = document.getElementById('formStatus');
-  const submitBtn   = document.getElementById('submitBtn');
+  const formStatus = document.getElementById('formStatus');
 
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
+      const nameField = document.getElementById('contactName');
+      const emailField = document.getElementById('contactEmail');
+      const msgField = document.getElementById('contactMessage');
 
-      const nameField    = document.getElementById('contactName');
-      const emailField   = document.getElementById('contactEmail');
-      const msgField     = document.getElementById('contactMessage');
-      const nameError    = document.getElementById('nameError');
-      const emailError   = document.getElementById('emailError');
-      const messageError = document.getElementById('messageError');
+      const name = nameField.value.trim();
+      const email = emailField.value.trim();
+      const message = msgField.value.trim();
 
-      // Clear previous errors
-      [nameField, emailField, msgField].forEach(function (f) {
-        f.classList.remove('error');
-      });
-      nameError.textContent    = '';
-      emailError.textContent   = '';
-      messageError.textContent = '';
-      formStatus.className     = 'form-status';
-      formStatus.textContent   = '';
-
-      // Validate
-      let valid = true;
-
-      if (!nameField.value.trim()) {
-        nameError.textContent = 'Please enter your full name.';
-        nameField.classList.add('error');
-        valid = false;
+      if (!name || !email || !message) {
+        e.preventDefault();
+        formStatus.className = 'form-status error';
+        formStatus.textContent = 'Please fill in all fields.';
+        return;
       }
 
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailField.value.trim() || !emailRegex.test(emailField.value.trim())) {
-        emailError.textContent = 'Please enter a valid email address.';
-        emailField.classList.add('error');
-        valid = false;
-      }
-
-      if (!msgField.value.trim() || msgField.value.trim().length < 10) {
-        messageError.textContent = 'Message must be at least 10 characters.';
-        msgField.classList.add('error');
-        valid = false;
-      }
-
-      if (!valid) return;
-
-      // Loading state
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending…';
-
-      // ──────────────────────────────────────────
-      // TODO: Replace this stub with your chosen
-      // email service (EmailJS, Formspree, etc.)
-      // Example with EmailJS:
-      //
-      // emailjs.send('SERVICE_ID', 'TEMPLATE_ID', {
-      //   from_name: nameField.value.trim(),
-      //   reply_to:  emailField.value.trim(),
-      //   message:   msgField.value.trim()
-      // }).then(onSuccess, onError);
-      //
-      // For now, we simulate a network call:
-      // ──────────────────────────────────────────
-      sendFormData(
-        {
-          name:    nameField.value.trim(),
-          email:   emailField.value.trim(),
-          message: msgField.value.trim()
-        },
-        function onSuccess() {
-          formStatus.className = 'form-status success';
-          formStatus.textContent = 'Thank you! Your message has been sent successfully.';
-          contactForm.reset();
-          submitBtn.disabled = false;
-          submitBtn.innerHTML =
-            '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message';
-        },
-        function onError() {
-          formStatus.className = 'form-status error';
-          formStatus.textContent = 'Sorry, there was an error sending your message. Please try again.';
-          submitBtn.disabled = false;
-          submitBtn.innerHTML =
-            '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message';
-        }
-      );
+      formStatus.className = 'form-status';
+      formStatus.textContent = 'Sending…';
     });
-  }
-
-  /**
-   * sendFormData – Stub function ready for backend/EmailJS integration.
-   * Replace the setTimeout simulation with your actual HTTP request or EmailJS call.
-   *
-   * @param {object}   data      - { name, email, message }
-   * @param {function} onSuccess - Callback on success
-   * @param {function} onError   - Callback on error
-   */
-  function sendFormData(data, onSuccess, onError) {
-    // ── STUB: Simulates async send (replace with real integration) ──
-    console.log('[Contact Form] Data to send:', data);
-
-    // Example: Using fetch to a backend endpoint
-    // fetch('/api/contact', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(data)
-    // })
-    // .then(function (res) { if (res.ok) onSuccess(); else onError(); })
-    // .catch(onError);
-
-    // Simulate 1.5s network delay (remove when using real integration)
-    setTimeout(function () {
-      // Simulate success (change to onError() to test error state)
-      onSuccess();
-    }, 1500);
   }
 
   /* ════════════════════════════════════════════
